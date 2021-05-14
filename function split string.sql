@@ -1,13 +1,25 @@
 
 CREATE FUNCTION SPLIT_STRING_WITH_INDEX(@STRING VARCHAR(4000),@Delimiter varchar(1))
+/*
+split input string by delimiter
+usage:
+SELECT *
+FROM SPLIT_STRING_WITH_INDEX('A,B,C',',')
 
+RETURNS TABLE:
+[Index],[String]
+1      ,A
+2      ,B
+3      ,C
+
+*/
  RETURNS @Split_values TABLE (
         ind int,
         string varchar(500)
     )
 AS
 BEGIN
---Declare @products varchar(200) = '1|20|3|343|44|6|8765'
+
 
 Declare @individual varchar(20) = null
 Declare @counter int = 0
